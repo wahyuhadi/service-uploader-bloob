@@ -16,6 +16,7 @@ router.post("/", upload.single("image"),  (req, res, next) => {
 			profile_file: "",
 			images: data
 		}).then(result => {
+            delete result.images
 			res.send(result);
 		}).catch(err => {
 			res.send(err);
